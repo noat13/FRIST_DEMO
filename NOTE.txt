@@ -1,0 +1,120 @@
+matomeru 10 19
+
+
+
+
+UIP	PUCHI001	ABCDE54321	oERLq
+
+E:\usr1\app\pif\clubkatene\log\enc_sql_apj.log   : file xem log
+E:\usr1\app\pif\clubkatene\conflog4j.xml         : chinh SQL ko encryt
+E:\WORKING_RETAIL\RETAIL\97_SourceCode\Source20181102\temporary_H2802_H301120_Platform\UIA-WebApp\src\main\resources\customizer.dicon
+
+cmd /c "ren *. *.jpg"
+(?s)\A((?!Text goes here).)+\z
+１２３４５６７８９１０
+レ
+\\fjn-03\hitachi$\PJ-HSS-201802-0001 (BOGOKAN)
+\\172.16.10.95\hitachi-20180118-01-imaizumi
+http://localhost:88/layout2/html/G001_Login.htm
+http://localhost:88/PESystem/htm/G001_Login.htm
+http://localhost:88/BougonSystem/htm/G001_Login.htm
+C:\Users\toan-nd\AppData\Local\Google\Chrome\User Data\Default\databases\http_localhost_88
+T:\CTI\PJ-CTI-201710-0002 (RETAIL)
+\\trung-dat-w7\shareCode
+\\QUAN-PPM-W7\share\
+172.16.10.142
+subst E: D:\WORKING_RETAIL
+mstsc
+
+Host: 172.16.10.147
+Port: 1521
+ID: XE
+User: UIAERI0I_2802EX
+Pass: UIAERI0I_2802EX
+UIB 65
+crtl A + crtl 1 + Text
+
+.metadata\.plugins\org.eclipse.core.resources\.projects\ ( xóa file co name index)
+8111100000000
+9130000123400
+Abc12345
+http://localhost:8080/UxWebTestCtrl/Start.do
+Source20190508\UxDev\stub-cis-local\chuden -> C:\Program Files\chuden
+
+
+alt + ctr + down =  copy line
+
+
+comment 105-117 AbstractPlatformManager.java
+1506327131200
+webKensinhyoPreview
+https://itresource.fujinet.net/WeekendCheckInRegister.aspx
+C:\Users\toan-nd\AppData\Roaming\Thinstall
+
+
+04401015961157	BANK
+273295562	CMND
+NOTE
+101C
+https://itresource.fujinet.net/WeekendCheckInRegister.aspx
+Connection Name: DCM_201710
+user SMDV_DCM_DEV2
+pass : Abc12345
+hostname: 172.16.7.89
+port: 1521
+ServiceName: pdcmk0101_srv
+/---------------------
+UserName: SMDV_DCM_BASE_DEV
+pass: Abc12345
+hostname: 172.16.7.89
+port: 1521
+ServiceName: pdcmk0101_srv
+USER_ID : 0331011 -- 0364131
+SESSION : Bhn5e0ayZY7XlGfmJyeZvaKwDYElV20161003133159703	DrpYkG4ZEnHTigVozKj95ia8g8Qgh20180109132235865
+SEESION + tencode : 2Ea0NCJDmiEGsmCnSXv1M1YO0ej0Z20160726200941594 + 6032 + select 1 => jgaikai : 02 - 05
+04901029113985
+04045009547449
+99999999999999
+日立システムズ
+北海道札幌市厚別区厚別中央3条2丁目1番1号
+DCMホールディングス株式会社
+取締役　代表　名前
+０１２３４５６７８９
+" "
+～
+ﾇﾈﾉ
+abc_123_!@#_ﾇﾈﾉ_お名前_2018/01/04
+A_!_ﾇ_お_,_2018/01/04
+
+	
+Hướng dẫn fix lỗi "self signed certificate in certificate chain" khi chạy nodejs npm command trên Windows
+Kiểu: Solution	| Được cập nhật vào: Sep 5, 2018 05:34 PM
+Mã giải pháp	:   619	Trạng thái	:   Chấp nhận  
+
+
+Chào các bạn
+
+Khi chạy lệnh Nodejs npm command trên Windows thường hay gặp lỗi sau đây do Firewall có sử dụng Untrusted CA certificate
+
+Ví dụ:
+
+PS C:\Windows\system32> npm install https://github.com/indexzero/forever/tarball/v0.5.6
+npm ERR! code SELF_SIGNED_CERT_IN_CHAIN
+npm ERR! errno SELF_SIGNED_CERT_IN_CHAIN
+npm ERR! request to https://github.com/indexzero/forever/tarball/v0.5.6 failed, reason: self signed certificate in certificate chain
+
+Cách khắc phục :
+
+-Download file gửi kèm Fortinet_CA_SSLProxy.crt về máy  c:\Certs\Fortinet_CA_SSLProxy.crt
+-Tại npm command, chạy lệnh: 
+
+ npm config set cafile C:\Certs\Fortinet_CA_SSLProxy.crt 
+
+Update 2018/09/05 :Nếu vẫn bị lỗi sau các bước trên hãy chạy lệnh "npm config set strict-ssl false" và thử lại
+
+Lưu ý : Team Leader gửi yêu cầu cho IT Admin, báo địa chỉ IP của máy cần thực thi download khi cần  .
+
+Chúc các bạn thành công
+
+
+
