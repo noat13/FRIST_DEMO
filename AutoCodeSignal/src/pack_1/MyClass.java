@@ -22,14 +22,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class MyClass {
-	public static final String PATH_SOURCE = "E:\\DOCUMENT\\CODESIGNAL\\Answer\\";
+	public static final String PATH_SOURCE = "D:\\GitHub\\CodeFight\\Answer\\";
 
 	public static void main(String[] args) {
 
 		ArrayList<String> urlList = new ArrayList<>();
 		// declaration and instantiation of objects/variables
 		// System.setProperty("webdriver.chrome.marionette","F:\\chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", "E:\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "D:\\GitHub\\CodeFight\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		int count = 5000;
 
@@ -48,7 +48,7 @@ public class MyClass {
 				Thread.currentThread();
 				Thread.sleep(sleep * 60000);
 			} catch (InterruptedException e) {
-				// TODO 自動生成された catch ブロ�?ク
+				// TODO è‡ªå‹•ç”Ÿæˆ�ã�•ã‚Œã�Ÿ catch ãƒ–ãƒ­ãƒ?ã‚¯
 				e.printStackTrace();
 			}
 
@@ -93,6 +93,9 @@ public class MyClass {
 			boolean registerFlag = false;
 			Integer loopPlay = 0;
 			while (see) {
+				
+				Thread.currentThread();
+				Thread.sleep(5000);
 				loopPlay++;
 				if (loopPlay > 50) {
 					driver.get(baseUrl);
@@ -148,8 +151,10 @@ public class MyClass {
 					closeButton.click();
 					closeButton = driver
 							.findElement(By.cssSelector(".growl-next-regular-tournament--footer .button--content"));
-					;
 					closeButton.click();
+					closeButton = driver.findElement(By.className("dismiss-button"));
+					closeButton.click();
+					
 
 				} catch (Exception e) {
 					// see task
@@ -223,13 +228,13 @@ public class MyClass {
 
 			WriteAnswer(urlC, driver);
 			Thread.currentThread();
-			Thread.sleep(5000);
+			Thread.sleep(15000);
 			WriteAnswer(urlD, driver);
 			Thread.currentThread();
-			Thread.sleep(20000);
+			Thread.sleep(25000);
 			WriteAnswer(urlE, driver);
 			Thread.currentThread();
-			Thread.sleep(25000);
+			Thread.sleep(35000);
 
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
@@ -331,30 +336,37 @@ public class MyClass {
 				String[] cssSelectorLanguage2 = { ".-space-v-8:nth-child(4) > .select-menu--item:nth-child(5) > .select-menu--text"
 												, ".-space-v-8:nth-child(4) > .select-menu--item:nth-child(4) > .select-menu--text"
 												, ".-space-v-8:nth-child(1) > .select-menu--item:nth-child(5) > .select-menu--text"
-												, ".-space-v-8:nth-child(3) > .select-menu--item:nth-child(2) > .select-menu--text"
-												, ".-space-v-8:nth-child(3) > .select-menu--item:nth-child(1) > .select-menu--text"};
+												, ".-space-v-8:nth-child(3) > .select-menu--item:nth-child(1) > .select-menu--text"
+												, ".-space-v-8:nth-child(3) > .select-menu--item:nth-child(2) > .select-menu--text"};
 				for (int i = 0; i < languageArr.length; i++) {
 					if (!modeArr[i].equalsIgnoreCase("")) {
 						// chon ngon ngu
 						try {
 							WebElement language1 = driver.findElement(By.cssSelector(cssSelectorLanguage1));
 							language1.click();
+							Thread.currentThread();
+							Thread.sleep(3000);
 							WebElement language2 = driver.findElement(By.cssSelector(cssSelectorLanguage2[i]));
-							language1.click();
+							language2.click();
+							Thread.currentThread();
+							Thread.sleep(3000);
 						} catch (Exception e) {
 							System.out.println("FAIL=======Loi chon ngon ngu");
 						}
 						// copy paste kq
 						String myString = sourceCodeArr[i];
+						System.out.println("Dap an = " + myString);
 						StringSelection stringSelection = new StringSelection(myString);
 						Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 						clipboard.setContents(stringSelection, null);
+						Thread.currentThread();
+						Thread.sleep(3000);
 						code.sendKeys(Keys.CONTROL + "a");
 						Thread.currentThread();
-						Thread.sleep(5000);
+						Thread.sleep(10000);
 						code.sendKeys(Keys.CONTROL + "v");
 						Thread.currentThread();
-						Thread.sleep(1000);
+						Thread.sleep(5000);
 
 						// submit va kiem tra
 						try {
@@ -365,7 +377,7 @@ public class MyClass {
 							WebElement messageSubmit = driver.findElement(By.cssSelector(".verdict-message"));
 							if (messageSubmit.getText().contains("error")) {
 								System.out.println("FAIL=======Dap AN : " + menthodName + ". " + modeArr[i] + " SAI");
-								createFileNotFound(PATH_SOURCE + "Error\\", menthodName,".nf");
+								createFileNotFound(PATH_SOURCE + "Error\\", menthodName,".errSubmit");
 							} else {
 								break;
 							}
@@ -375,7 +387,7 @@ public class MyClass {
 					}
 				}
 			} else {
-				createFileNotFound("E:\\DOCUMENT\\CODESIGNAL\\Answer\\Error\\", menthodName, "errName");
+				createFileNotFound(PATH_SOURCE + "\\Error\\", menthodName, "errMethodName");
 			}
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
@@ -399,7 +411,7 @@ public class MyClass {
 				}
 			}
 			temp = allLine.toString();
-			System.out.println(temp);
+			System.out.println("file dap an = " + file.getName());
 			return temp;
 		} catch (Exception e) {
 			return "";
