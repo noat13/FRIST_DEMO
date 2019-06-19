@@ -19,7 +19,7 @@ public class GetFileSource {
 		// declaration and instantiation of objects/variables
     	System.setProperty("webdriver.chrome.driver","D:\\GitHub\\CodeFight\\chromedriver.exe");
 
-		int count = 8;
+		int count = 61;
 		while (count <1000) {
 			WebDriver driver = new ChromeDriver();
 			count ++;
@@ -87,7 +87,8 @@ public class GetFileSource {
 			Thread.sleep(5000);
 
 		    List<WebElement> solutionRows = driver.findElements(By.cssSelector(".rt-tr-group"));
-		    solutionRows.get(0).click();
+			solutionRows.get(0).click();
+			boolean isFirstRow = true;
 		    for (WebElement detailSolutionRows : solutionRows) {
 		    	List<WebElement> detailSolution = detailSolutionRows.findElements(By.cssSelector(".rt-td"));
 		    	if (language.length() == 0
@@ -95,19 +96,27 @@ public class GetFileSource {
 		    			&& ( detailSolution.get(2).getText().contains("Py3")
 			    			|| detailSolution.get(2).getText().contains("Py2"))) {
 		    		language = detailSolution.get(2).getText();
-		    		detailSolution.get(2).click();
+		    		if (!isFirstRow) {
+			    		detailSolution.get(2).click();
+		    		}
 			    	Thread.currentThread();
 					Thread.sleep(2000);
 		    		break;
 		    	}
 		    	if (language.length() == 0
-		    			&& (!isNotAB && "300".equals(detailSolution.get(3).getText()))) {
+		    			&& (!isNotAB || "300".equals(detailSolution.get(3).getText()))
+		    			&& ( detailSolution.get(2).getText().contains("Java")
+				    			|| detailSolution.get(2).getText().contains("JS")
+				    			|| detailSolution.get(2).getText().contains("C++"))) {
 		    		language = detailSolution.get(2).getText();
-		    		detailSolution.get(2).click();
+		    		if (!isFirstRow) {
+		    			detailSolution.get(2).click();
+		    		}
 			    	Thread.currentThread();
 					Thread.sleep(2000);
 		    		break;
 		    	}
+		    	isFirstRow = false;
 		    }
 		    	Thread.currentThread();
 				Thread.sleep(2000);

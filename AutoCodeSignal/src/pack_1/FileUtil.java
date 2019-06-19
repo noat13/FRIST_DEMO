@@ -66,6 +66,10 @@ public class FileUtil {
 	
 	public static void main(String[] args) {
 		deleteFileWithText(PATH_SRC + "\\JS","def ", true);
+		deleteFileWithText(PATH_SRC + "\\C++","def ", true);
+		deleteFileWithText(PATH_SRC + "\\Java","def ", true);
+		deleteFileWithText(PATH_SRC + "\\Py2","def ", false);
+		deleteFileWithText(PATH_SRC + "\\Py3","def ", false);
 	}
 	
 }
