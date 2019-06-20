@@ -31,7 +31,7 @@ public class MyClass {
 		// System.setProperty("webdriver.chrome.marionette","F:\\chromedriver.exe");
 		System.setProperty("webdriver.chrome.driver", "D:\\GitHub\\CodeFight\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-		int count = 5000;
+		int count = 100000;
 
 		Login(driver);
 		while (count > 4985) {
