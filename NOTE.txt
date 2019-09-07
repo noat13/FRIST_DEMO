@@ -54,6 +54,7 @@ C:\Users\toan-nd\AppData\Roaming\Thinstall
 
 04401015961157	BANK
 273295562	CMND
+iamnoat13!
 NOTE
 101C
 https://itresource.fujinet.net/WeekendCheckInRegister.aspx
